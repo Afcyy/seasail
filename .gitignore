@@ -17,8 +17,3 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/database/migrations/2023_07_10_184337_create_roles_table.php
-/database/migrations/2023_07_10_184550_create_role_user_table.php
-/database/migrations/2023_07_10_184907_create_travels_table.php
-/app/Models/Role.php
-/app/Models/Travel.php
