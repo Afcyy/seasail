@@ -13,12 +13,13 @@ class TravelsListTest extends TestCase
 
     public function test_travels_list_returns_paginated_data(): void
     {
-        Travel::factory(20)->create(['is_public' => true]);
+        $pagination = config('app.pagination.travels');
+        Travel::factory($pagination + 1)->create(['is_public' => true]);
 
         $response = $this->get('/api/v1/travels');
 
         $response->assertOk();
-        $response->assertJsonCount(15, 'data');
+        $response->assertJsonCount($pagination, 'data');
         $response->assertJsonPath('meta.last_page', 2);
     }
 
