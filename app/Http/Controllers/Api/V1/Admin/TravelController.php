@@ -9,7 +9,7 @@ use App\Models\Travel;
 
 class TravelController extends Controller
 {
-    public function store(TravelRequest $request)
+    public function store(TravelRequest $request): TravelResource
     {
         $travel = Travel::create($request->validated());
 
