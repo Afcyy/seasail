@@ -187,6 +187,6 @@ return [
 
     'pagination' => [
         'tours' => 15,
-        'travels' => 15
-    ]
+        'travels' => 15,
+    ],
 ];

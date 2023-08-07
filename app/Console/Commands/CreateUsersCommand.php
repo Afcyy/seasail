@@ -43,15 +43,15 @@ class CreateUsersCommand extends Command
             'role' => ['required', 'exists:roles,name'],
         ]);
 
-        if($validator->fails()) {
-            foreach ($validator->errors()->all() as $error){
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error) {
                 $this->error($error);
             }
 
             return -1;
         }
 
-        DB::transaction(function () use($user) {
+        DB::transaction(function () use ($user) {
             $role = Role::where('name', $user['role'])->first();
             $user['password'] = Hash::make($user['password']);
 
