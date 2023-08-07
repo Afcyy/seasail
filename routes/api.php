@@ -32,4 +32,6 @@ Route::prefix('v1')->group(function () {
         Route::post('travels', [Admin\TravelController::class, 'store']);
         Route::post('travels/{travel}/tours', [Admin\TourController::class, 'store']);
     });
+
+    Route::put('travels/{travel}', [Admin\TravelController::class, 'update']);
 });
