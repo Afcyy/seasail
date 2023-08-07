@@ -43,7 +43,7 @@ class ToursListTest extends TestCase
         $pagination = config('app.pagination.tours');
 
         $travel = Travel::factory()->create(['is_public' => true]);
-        Tour::factory( $pagination + 1)->create(['travel_id' => $travel->id]);
+        Tour::factory($pagination + 1)->create(['travel_id' => $travel->id]);
 
         $response = $this->get('/api/v1/travels/'.$travel->slug.'/tours');
 
